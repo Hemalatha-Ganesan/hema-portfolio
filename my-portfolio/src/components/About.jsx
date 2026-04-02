@@ -3,11 +3,7 @@ import BioImage from "../assets/my_photo.jpg";
 import { FaGithub, FaHackerrank } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
-<a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-  <button className="bg-blue-500 text-white px-5 py-2 mt-4 rounded-lg hover:bg-blue-600">
-    📄 View Resume
-  </button>
-</a>
+
 
 
 function About() {
@@ -106,7 +102,7 @@ function About() {
             </div>
           </div>
 
-          <a href="/Resume.pdf" download="Hemalatha's Resume.pdf">
+          <a href="/src/assets/7376231CS179_Resume.pdf" download="Hemalatha's Resume.pdf">
                <button className="bg-green-500 text-white px-5 py-2 mt-4 rounded-lg hover:bg-green-600">
                  ⬇️ Download Resume
                </button>

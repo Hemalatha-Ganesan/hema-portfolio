@@ -15,11 +15,11 @@ function Projects() {
       color: '#3b82f6'
     },
     {
-      title: 'AI Savings Goal Planner – Full-stack / AI Integration',
-      description: 'Developing a web app that helps users set savings goals and generates personalized weekly/monthly saving plans using AI. Implemented AI-powered insights and expense reduction suggestions for better financial management.',
-      tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'OpenAI API', 'Chart.js', 'Git', 'GitHub'],
-      color: '#10b981'
-    }
+  title: 'AI-Driven Course Recommendation System – Full-stack / AI Integration',
+  description: 'Developed a web application that recommends personalized courses based on user interests, skills, and learning goals. Integrated AI to analyze user preferences and generate intelligent course suggestions, along with insights to improve learning paths and skill development.',
+  tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'OpenAI API', 'Git', 'GitHub'],
+  color: '#10b981'
+}
   ];
 
   return (

@@ -8,11 +8,11 @@ function Skills() {
     },
     {
       title: 'Backend',
-      skills: ['Node.js', 'Python', 'Express', 'MongoDB', 'SQL']
+      skills: ['MySQL', 'Python', 'MongoDB', 'SQL']
     },
     {
       title: 'Tools & Others',
-      skills: ['Git', 'VS Code', 'Machine Learning', 'Data Analysis', 'Problem Solving']
+      skills: ['Git', 'VS Code', 'Machine Learning', 'Problem Solving','Figma','canva']
     }
   ];
 
