@@ -20,7 +20,7 @@ function Projects() {
       title: 'AI-Driven Course Recommendation System – Full-stack / AI Integration',
       description: 'Developed a web application that recommends personalized courses based on user interests, skills, and learning goals. Integrated AI to analyze user preferences and generate intelligent course suggestions, along with insights to improve learning paths and skill development.',
       tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'OpenAI API', 'Git', 'GitHub'],
-      githubUrl: 'https://github.com/Hemalatha-Ganesan/AI-Course-Recommendation-System',
+      liveUrl: 'https://ai-course-recommendation-system.vercel.app/login',
       color: '#10b981'
     }
   ];

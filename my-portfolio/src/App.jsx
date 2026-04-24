@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Education from "./components/Education";
 import Skills from "./components/Skills";
 import Projects from "./components/projects";
 import Certification from "./components/certification";
@@ -12,12 +13,19 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    return window.innerWidth >= 768;
+  });
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ["hero", "about", "skills", "projects", "certifications", "contact"];
+      const sections = ["hero", "about", "education", "skills", "projects", "certifications", "contact"];
 
       const current = sections.find((section) => {
         const element = document.getElementById(section);
@@ -31,8 +39,19 @@ function App() {
       if (current) setActiveSection(current);
     };
 
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    handleScroll();
+    handleResize();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   const scrollToSection = (id) => {
@@ -47,6 +66,8 @@ function App() {
         backgroundColor: "#f8f9fb",
         color: "#111827",
         lineHeight: 1.6,
+        display: "flex",
+        minHeight: "100vh",
       }}
     >
       <Navbar
@@ -57,13 +78,22 @@ function App() {
         setIsMenuOpen={setIsMenuOpen}
       />
 
-      <Hero scrollToSection={scrollToSection} />
-      <SectionWrapper><About /></SectionWrapper>
-      <SectionWrapper><Skills /></SectionWrapper>
-      <SectionWrapper><Projects /></SectionWrapper>
-      <SectionWrapper><Certification /></SectionWrapper>
-      <SectionWrapper><Contact /></SectionWrapper>
-      <Footer />
+      <main
+        style={{
+          flex: 1,
+          marginLeft: isDesktop ? "260px" : "0",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
+        <Hero scrollToSection={scrollToSection} />
+        <SectionWrapper><About /></SectionWrapper>
+        <SectionWrapper><Education /></SectionWrapper>
+        <SectionWrapper><Skills /></SectionWrapper>
+        <SectionWrapper><Projects /></SectionWrapper>
+        <SectionWrapper><Certification /></SectionWrapper>
+        <SectionWrapper><Contact /></SectionWrapper>
+        <Footer />
+      </main>
 
       <style>{`
         * {

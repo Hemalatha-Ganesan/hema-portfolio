@@ -1,4 +1,7 @@
 import React from "react";
+import myPhoto from "../assets/my_photo.jpg";
+import { FaGithub, FaLinkedin, FaHackerrank } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
 
 function Hero({ scrollToSection }) {
   return (
@@ -7,120 +10,280 @@ function Hero({ scrollToSection }) {
       style={{
         minHeight: "100vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
-        textAlign: "center",
-        padding: "2rem",
+        padding: "2rem 4rem",
         position: "relative",
         overflow: "hidden",
-        background:
-          "linear-gradient(135deg, #0F172A 0%, #1E1B4B 40%, #312E81 100%)",
-        color: "white",
-        animation: "fadeIn 1.2s ease-out",
+        background: "linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f3e8ff 100%)",
+        color: "#1e293b",
       }}
     >
-      {/* TECH GRID BACKGROUND */}
+      {/* Decorative Blobs */}
+      <div style={blobStyle("#c7d2fe", "-5%", "-10%", "400px")} />
+      <div style={blobStyle("#ddd6fe", "70%", "60%", "350px")} />
+      <div style={blobStyle("#fbcfe8", "40%", "80%", "300px")} />
+
       <div
         style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          zIndex: 0,
+          maxWidth: "1200px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: "4rem",
+          alignItems: "center",
+          width: "100%",
+          zIndex: 2,
         }}
-      ></div>
+      >
+        {/* LEFT CONTENT */}
+        <div style={{ animation: "fadeInUp 1s ease-out" }}>
+          <div
+            style={{
+              display: "inline-block",
+              background: "rgba(99, 102, 241, 0.1)",
+              color: "#4f46e5",
+              padding: "0.5rem 1.2rem",
+              borderRadius: "50px",
+              fontSize: "0.95rem",
+              fontWeight: "600",
+              marginBottom: "1.5rem",
+            }}
+          >
+            👋 Welcome to my portfolio
+          </div>
 
-      {/* PARTICLE GLOWING SPHERES */}
-      <div style={pulseBall(15, "20%", "15%", "#6EE7B7")}></div>
-      <div style={pulseBall(18, "70%", "75%", "#93C5FD")}></div>
-      <div style={pulseBall(22, "40%", "85%", "#F472B6")}></div>
+          <h1
+            style={{
+              fontSize: "3.5rem",
+              fontWeight: "800",
+              lineHeight: 1.2,
+              marginBottom: "1rem",
+            }}
+          >
+            Hi, I'm{" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #4f46e5, #9333ea)",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              Hemalatha G
+            </span>
+          </h1>
 
-      {/* HERO TEXT */}
-      <div style={{ maxWidth: "850px", zIndex: 2 }}>
-        <h3
-          style={{
-            fontSize: "1.2rem",
-            opacity: 0.9,
-            animation: "fadeInUp 0.8s ease-out",
-          }}
-        >
-          👋 Hello, Welcome to my portfolio
-        </h3>
+          <h2
+            style={{
+              fontSize: "1.5rem",
+              color: "#475569",
+              fontWeight: "500",
+              marginBottom: "1.5rem",
+            }}
+          >
+            Aspiring Full-Stack Developer | ML & SQL Enthusiast
+          </h2>
 
-        <h1
-          style={{
-            fontSize: "3.8rem",
-            fontWeight: "800",
-            margin: "1rem 0",
-            background:
-              "linear-gradient(90deg, #A78BFA, #FDE68A, #93C5FD)",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-            animation: "fadeInUp 1.1s ease-out",
-          }}
-        >
-          I'm Hemalatha G
-        </h1>
+          <p
+            style={{
+              fontSize: "1.05rem",
+              color: "#64748b",
+              lineHeight: 1.8,
+              marginBottom: "2rem",
+              maxWidth: "500px",
+            }}
+          >
+            I craft modern web applications and explore machine learning to build
+            smarter, scalable digital solutions. Passionate about Java, DSA, and
+            creating impactful user experiences.
+          </p>
 
-        <p
-          style={{
-            fontSize: "1.6rem",
-            opacity: 0.95,
-            marginBottom: "1.5rem",
-            animation: "fadeInUp 1.3s ease-out",
-          }}
-        >
-          Aspiring Full-Stack Developer | ML & SQL Enthusiast | Java & DSA Practitioner
-        </p>
+          {/* Social Icons */}
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              marginBottom: "2rem",
+            }}
+          >
+            <SocialIcon
+              href="https://github.com/Hemalatha-Ganesan"
+              icon={<FaGithub size={20} />}
+            />
+            <SocialIcon
+              href="https://leetcode.com/u/hemalatha_08/"
+              icon={<SiLeetcode size={20} />}
+            />
+            <SocialIcon
+              href="https://www.hackerrank.com/profile/hemalathaganesan"
+              icon={<FaHackerrank size={20} />}
+            />
+            <SocialIcon
+              href="https://linkedin.com"
+              icon={<FaLinkedin size={20} />}
+            />
+          </div>
 
-        <p
-          style={{
-            fontSize: "1.2rem",
-            opacity: 0.8,
-            marginBottom: "2rem",
-            maxWidth: "650px",
-            margin: "0 auto 2rem auto",
-            animation: "fadeInUp 1.4s ease-out",
-          }}
-        >
-          Crafting modern web applications and exploring machine learning to build smarter, scalable digital solutions.
-        </p>
+          {/* Buttons */}
+          <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <button
+              onClick={() => scrollToSection("projects")}
+              style={{
+                padding: "0.9rem 2rem",
+                borderRadius: "50px",
+                background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "1rem",
+                fontWeight: "600",
+                boxShadow: "0 8px 25px rgba(79, 70, 229, 0.35)",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-3px)";
+                e.currentTarget.style.boxShadow =
+                  "0 12px 30px rgba(79, 70, 229, 0.45)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow =
+                  "0 8px 25px rgba(79, 70, 229, 0.35)";
+              }}
+            >
+              View My Work
+            </button>
 
-        {/* BUTTONS */}
+            <button
+              onClick={() => scrollToSection("contact")}
+              style={{
+                padding: "0.9rem 2rem",
+                borderRadius: "50px",
+                background: "transparent",
+                color: "#4f46e5",
+                border: "2px solid #4f46e5",
+                cursor: "pointer",
+                fontSize: "1rem",
+                fontWeight: "600",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#4f46e5";
+                e.currentTarget.style.color = "white";
+                e.currentTarget.style.transform = "translateY(-3px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#4f46e5";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              Contact Me
+            </button>
+          </div>
+
+          {/* Stats */}
+          <div
+            style={{
+              display: "flex",
+              gap: "2.5rem",
+              marginTop: "3rem",
+            }}
+          >
+            <StatBox number="10+" label="Projects" />
+            <StatBox number="5+" label="Certifications" />
+            <StatBox number="3+" label="Years Coding" />
+          </div>
+        </div>
+
+        {/* RIGHT CONTENT - Photo */}
         <div
           style={{
             display: "flex",
-            gap: "1rem",
             justifyContent: "center",
-            animation: "fadeInUp 1.6s ease-out",
+            alignItems: "center",
+            position: "relative",
+            animation: "fadeInUp 1.2s ease-out",
           }}
         >
-          <button
-            onClick={() => scrollToSection("projects")}
-            style={primaryBtn}
-          >
-            View My Work
-          </button>
+          {/* Decorative ring */}
+          <div
+            style={{
+              position: "absolute",
+              width: "360px",
+              height: "360px",
+              borderRadius: "50%",
+              border: "3px dashed #c7d2fe",
+              animation: "spin 20s linear infinite",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              width: "400px",
+              height: "400px",
+              borderRadius: "50%",
+              border: "2px solid #ddd6fe",
+              animation: "spin 25s linear infinite reverse",
+            }}
+          />
 
-          <button
-            onClick={() => scrollToSection("contact")}
-            style={outlineBtn}
+          {/* Photo container */}
+          <div
+            style={{
+              position: "relative",
+              width: "320px",
+              height: "320px",
+              borderRadius: "50%",
+              padding: "8px",
+              background: "linear-gradient(135deg, #4f46e5, #9333ea)",
+              boxShadow: "0 20px 50px rgba(79, 70, 229, 0.3)",
+            }}
           >
-            Get In Touch
-          </button>
+            <img
+              src={myPhoto}
+              alt="Hemalatha"
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "4px solid white",
+              }}
+            />
+          </div>
+
+          {/* Floating badges */}
+          <FloatingBadge
+            text="React"
+            top="10%"
+            right="5%"
+            color="#61dafb"
+          />
+          <FloatingBadge
+            text="Python"
+            bottom="15%"
+            left="0%"
+            color="#ffd43b"
+          />
+          <FloatingBadge
+            text="Java"
+            top="50%"
+            right="-10%"
+            color="#f89820"
+          />
         </div>
       </div>
 
-      {/* DOWN ARROW */}
+      {/* Down Arrow */}
       <div
         style={{
-          fontSize: "2.7rem",
           position: "absolute",
-          bottom: "1.5rem",
+          bottom: "2rem",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "2rem",
+          color: "#4f46e5",
           cursor: "pointer",
-          opacity: 0.8,
           animation: "bounce 2s infinite",
           zIndex: 3,
         }}
@@ -129,70 +292,143 @@ function Hero({ scrollToSection }) {
         ⌄
       </div>
 
-      {/* ANIMATIONS */}
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(40px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes pulseGlow {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 0.9; transform: scale(1.25); }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
         @keyframes bounce {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
         }
       `}</style>
     </section>
   );
 }
 
-/* ----------- BUTTON STYLES ----------- */
-const primaryBtn = {
-  padding: "1rem 2rem",
-  borderRadius: "50px",
-  background: "linear-gradient(90deg, #6366F1, #8B5CF6)",
-  color: "white",
-  border: "none",
-  cursor: "pointer",
-  fontSize: "1.1rem",
-  fontWeight: "600",
-  boxShadow: "0 8px 25px rgba(99,102,241,0.4)",
-  transition: "0.3s",
-};
+/* Social Icon Component */
+function SocialIcon({ href, icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        width: "42px",
+        height: "42px",
+        borderRadius: "50%",
+        background: "white",
+        color: "#4f46e5",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        transition: "all 0.3s ease",
+        textDecoration: "none",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.background = "#4f46e5";
+        e.currentTarget.style.color = "white";
+        e.currentTarget.style.transform = "translateY(-4px)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.background = "white";
+        e.currentTarget.style.color = "#4f46e5";
+        e.currentTarget.style.transform = "translateY(0)";
+      }}
+    >
+      {icon}
+    </a>
+  );
+}
 
-const outlineBtn = {
-  padding: "1rem 2rem",
-  borderRadius: "50px",
-  background: "transparent",
-  color: "#D1D5DB",
-  border: "2px solid #D1D5DB",
-  cursor: "pointer",
-  fontSize: "1.1rem",
-  fontWeight: "600",
-  transition: "0.3s",
-};
+/* Stat Box Component */
+function StatBox({ number, label }) {
+  return (
+    <div>
+      <div
+        style={{
+          fontSize: "1.8rem",
+          fontWeight: "800",
+          color: "#4f46e5",
+        }}
+      >
+        {number}
+      </div>
+      <div
+        style={{
+          fontSize: "0.9rem",
+          color: "#64748b",
+          fontWeight: "500",
+        }}
+      >
+        {label}
+      </div>
+    </div>
+  );
+}
 
-/* ----------- GLOWING TECH SPHERES ----------- */
-function pulseBall(size, left, top, color) {
+/* Floating Badge */
+function FloatingBadge({ text, top, bottom, left, right, color }) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top,
+        bottom,
+        left,
+        right,
+        background: "white",
+        color: "#334155",
+        padding: "0.5rem 1rem",
+        borderRadius: "50px",
+        fontSize: "0.85rem",
+        fontWeight: "600",
+        boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+        animation: "float 3s ease-in-out infinite",
+        display: "flex",
+        alignItems: "center",
+        gap: "0.4rem",
+        zIndex: 5,
+      }}
+    >
+      <span
+        style={{
+          width: "8px",
+          height: "8px",
+          borderRadius: "50%",
+          background: color,
+          display: "inline-block",
+        }}
+      />
+      {text}
+    </div>
+  );
+}
+
+/* Blob Style */
+function blobStyle(color, left, top, size) {
   return {
     position: "absolute",
-    width: `${size}rem`,
-    height: `${size}rem`,
+    width: size,
+    height: size,
     borderRadius: "50%",
     background: color,
     filter: "blur(80px)",
-    opacity: 0.25,
+    opacity: 0.4,
     left,
     top,
-    animation: "pulseGlow 6s infinite ease-in-out",
-    zIndex: 1,
+    zIndex: 0,
   };
 }
 
 export default Hero;
+

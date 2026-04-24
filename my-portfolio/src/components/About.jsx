@@ -1,159 +1,292 @@
 import React from "react";
-import BioImage from "../assets/my_photo.jpg";
-import { FaGithub, FaHackerrank } from "react-icons/fa";
+import myPhoto from "../assets/hema_jean_photo.jpeg";
+import {
+  FaGithub,
+  FaHackerrank,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaGraduationCap,
+  FaCalendarAlt,
+} from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
-
-
-
 function About() {
+  const personalInfo = [
+    {
+      icon: <FaGraduationCap />,
+      label: "Degree",
+      value: "B.E Computer Science and Engineering",
+    },
+    { icon: <FaEnvelope />, label: "Email", value: "hemalathaganesan08@gmail.com" },
+    { icon: <FaMapMarkerAlt />, label: "Location", value: "Tamil Nadu, India" },
+    { icon: <FaCalendarAlt />, label: "Year", value: "3rd Year" },
+  ];
+
   return (
     <section
       id="about"
-      style={{
-        padding: "5rem 2rem",
-        backgroundColor: "#f9fafb",
-        minHeight: "60vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      style={{ padding: "6rem 2rem", backgroundColor: "#ffffff", minHeight: "70vh" }}
     >
-      <div style={{ maxWidth: "1000px" }}>
-        <h2
-          style={{
-            fontSize: "2.5rem",
-            marginBottom: "1rem",
-            textAlign: "center",
-            color: "#1f2937",
-            fontWeight: "700",
-          }}
-        >
-          About Me
-        </h2>
-
-        <div
-          style={{
-            width: "60px",
-            height: "4px",
-            backgroundColor: "#667eea",
-            margin: "0 auto 3rem",
-            borderRadius: "2px",
-          }}
-        />
+      <div style={{ maxWidth: "1100px", width: "100%", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
+          <span
+            style={{
+              display: "inline-block",
+              background: "rgba(79, 70, 229, 0.1)",
+              color: "#4f46e5",
+              padding: "0.4rem 1rem",
+              borderRadius: "50px",
+              fontSize: "0.85rem",
+              fontWeight: "600",
+              textTransform: "uppercase",
+              letterSpacing: "1px",
+              marginBottom: "1rem",
+            }}
+          >
+            About Me
+          </span>
+          <h2
+            style={{
+              fontSize: "2.5rem",
+              fontWeight: "800",
+              color: "#1e293b",
+              marginBottom: "0.5rem",
+            }}
+          >
+            Know Who <span style={{ color: "#4f46e5" }}>I Am</span>
+          </h2>
+          <div
+            style={{
+              width: "60px",
+              height: "4px",
+              backgroundColor: "#4f46e5",
+              margin: "0 auto",
+              borderRadius: "2px",
+            }}
+          />
+        </div>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "2rem",
-            alignItems: "center",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "3rem",
+            alignItems: "start",
           }}
         >
-          {/* LEFT SIDE - Text Section */}
+          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "320px",
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
+              }}
+            >
+              <img
+                src={myPhoto}
+                alt="Hemalatha"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  aspectRatio: "3/4",
+                  objectFit: "cover",
+                }}
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                top: "-15px",
+                left: "-15px",
+                width: "80px",
+                height: "80px",
+                border: "4px solid #4f46e5",
+                borderRadius: "16px",
+                zIndex: -1,
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                bottom: "-15px",
+                right: "-15px",
+                width: "80px",
+                height: "80px",
+                background: "#c7d2fe",
+                borderRadius: "16px",
+                zIndex: -1,
+              }}
+            />
+          </div>
+
           <div>
+            <h3
+              style={{
+                fontSize: "1.6rem",
+                fontWeight: "700",
+                color: "#1e293b",
+                marginBottom: "1rem",
+              }}
+            >
+              I'm Hemalatha G, a passionate{" "}
+              <span style={{ color: "#4f46e5" }}>Full-Stack Developer</span> and{" "}
+              <span style={{ color: "#4f46e5" }}>ML Enthusiast</span>
+            </h3>
+
             <p
               style={{
-                fontSize: "1.1rem",
+                fontSize: "1.05rem",
                 lineHeight: "1.8",
-                color: "#4b5563",
+                color: "#64748b",
                 marginBottom: "1.5rem",
               }}
             >
-              I'm <strong>Hema</strong>, a passionate Computer Science student dedicated to creating
-              impactful digital experiences through code. My journey in technology is driven by
-              curiosity and a commitment to continuous learning.
+              I am a dedicated Computer Science student with a strong foundation in
+              full-stack web development, database management, and machine learning. I
+              enjoy solving complex problems and building applications that make a real
+              difference.
             </p>
+
             <p
               style={{
-                fontSize: "1.1rem",
+                fontSize: "1.05rem",
                 lineHeight: "1.8",
-                color: "#4b5563",
+                color: "#64748b",
+                marginBottom: "2rem",
               }}
             >
-              I specialize in building dynamic web applications with modern frameworks, managing
-              robust databases, and exploring innovative AI & Machine Learning solutions. I believe
-              in writing clean, efficient code that solves real-world problems.
+              I have hands-on experience with modern frameworks like React, robust
+              databases like MySQL and MongoDB, and I'm actively exploring AI/ML
+              domains.
             </p>
 
-            {/* Coding Platform Icons */}
-            <div style={{ fontSize: "28px", marginTop: "1.5rem" }}>
-              <a
-                href="https://leetcode.com/u/hemalatha_08/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <SiLeetcode style={{ margin: "0 10px", color: "#f39c12" }} />
-              </a>
-              <a
-                href="https://www.hackerrank.com/profile/hemalathaganesan"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaHackerrank style={{ margin: "0 10px", color: "#2ecc71" }} />
-              </a>
-              <a
-                href="https://github.com/Hemalatha-Ganesan"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub style={{ margin: "0 10px", color: "#000" }} />
-              </a>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+                gap: "1rem",
+                marginBottom: "2rem",
+              }}
+            >
+              {personalInfo.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    padding: "0.8rem 1rem",
+                    background: "#f8fafc",
+                    borderRadius: "10px",
+                    border: "1px solid #e2e8f0",
+                  }}
+                >
+                  <span style={{ color: "#4f46e5", fontSize: "1.1rem" }}>{item.icon}</span>
+                  <div>
+                    <div
+                      style={{ fontSize: "0.75rem", color: "#94a3b8", fontWeight: "500" }}
+                    >
+                      {item.label}
+                    </div>
+                    <div
+                      style={{ fontSize: "0.95rem", color: "#334155", fontWeight: "600" }}
+                    >
+                      {item.value}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
 
-          <a href="/src/assets/7376231CS179_Resume.pdf" download="Hemalatha's Resume.pdf">
-               <button className="bg-green-500 text-white px-5 py-2 mt-4 rounded-lg hover:bg-green-600">
-                 ⬇️ Download Resume
-               </button>
-          </a>
-
-          {/* RIGHT SIDE - Image + Quick Facts */}
-          <div
-            style={{
-              backgroundColor: "white",
-              padding: "2rem",
-              borderRadius: "15px",
-              boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-              textAlign: "center",
-            }}
-          >
-            {/* Bio Image */}
-            <img
-              src={BioImage}
-              alt="Hemalatha"
+            <div
               style={{
-                width: "150px",
-                height: "150px",
-                borderRadius: "50%",
-                objectFit: "cover",
-                marginBottom: "1.2rem",
-                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-              }}
-            />
-
-            <h3
-              style={{
-                marginBottom: "1rem",
-                color: "#667eea",
-                fontSize: "1.3rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "1.5rem",
+                flexWrap: "wrap",
               }}
             >
-              Quick Facts
-            </h3>
-            <ul
-              style={{
-                listStyle: "none",
-                padding: 0,
-                lineHeight: "2",
-                fontSize: "1.05rem",
-              }}
-            >
-              <li>🎓 Computer Science Student</li>
-              <li>💻 Full-Stack Development</li>
-              <li>🤖 ML & AI Enthusiast</li>
-              <li>🚀 Always Learning</li>
-            </ul>
+              <a
+                href="/src/assets/7376231CS179_Resume.pdf"
+                download="Hemalatha_Resume.pdf"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  padding: "0.85rem 1.8rem",
+                  background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
+                  color: "white",
+                  borderRadius: "50px",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                  fontSize: "0.95rem",
+                  boxShadow: "0 8px 20px rgba(79, 70, 229, 0.3)",
+                }}
+              >
+                Download CV
+              </a>
+
+              <div style={{ display: "flex", gap: "0.75rem" }}>
+                <a
+                  href="https://github.com/Hemalatha-Ganesan"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "#f1f5f9",
+                    color: "#475569",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textDecoration: "none",
+                  }}
+                >
+                  <FaGithub size={18} />
+                </a>
+                <a
+                  href="https://leetcode.com/u/hemalatha_08/"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "#f1f5f9",
+                    color: "#475569",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textDecoration: "none",
+                  }}
+                >
+                  <SiLeetcode size={18} />
+                </a>
+                <a
+                  href="https://www.hackerrank.com/profile/hemalathaganesan"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "#f1f5f9",
+                    color: "#475569",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    textDecoration: "none",
+                  }}
+                >
+                  <FaHackerrank size={18} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
