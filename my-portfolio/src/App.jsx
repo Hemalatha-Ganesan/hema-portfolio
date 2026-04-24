@@ -13,13 +13,6 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(() => {
-    if (typeof window === "undefined") {
-      return true;
-    }
-
-    return window.innerWidth >= 768;
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,18 +32,11 @@ function App() {
       if (current) setActiveSection(current);
     };
 
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
     handleScroll();
-    handleResize();
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -63,8 +49,8 @@ function App() {
     <div
       style={{
         fontFamily: "Inter, system-ui, sans-serif",
-        backgroundColor: "#f8f9fb",
-        color: "#111827",
+        backgroundColor: "#f6efe6",
+        color: "#2b211c",
         lineHeight: 1.6,
         display: "flex",
         minHeight: "100vh",
@@ -81,8 +67,7 @@ function App() {
       <main
         style={{
           flex: 1,
-          marginLeft: isDesktop ? "260px" : "0",
-          transition: "margin-left 0.3s ease",
+          marginLeft: "0",
         }}
       >
         <Hero scrollToSection={scrollToSection} />

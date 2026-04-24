@@ -18,8 +18,7 @@ function Navbar({
   ];
 
   const sidebarWidth = "260px";
-  const isDesktop = typeof window !== "undefined" ? window.innerWidth >= 768 : true;
-  const isSidebarVisible = isMenuOpen || isDesktop;
+  const isSidebarVisible = isMenuOpen;
 
   return (
     <>
@@ -30,14 +29,14 @@ function Navbar({
           left: 0,
           height: "100vh",
           width: sidebarWidth,
-          backgroundColor: isScrolled
-            ? "rgba(79, 70, 229, 0.98)"
-            : "rgba(79, 70, 229, 1)",
-          backdropFilter: "blur(10px)",
+          background: isScrolled
+            ? "linear-gradient(180deg, rgba(47, 35, 30, 0.98), rgba(150, 76, 58, 0.98))"
+            : "linear-gradient(180deg, #2f231e, #964c3a)",
+          backdropFilter: "blur(14px)",
           padding: "2rem 1.5rem",
           zIndex: 1000,
           transition: "all 0.3s ease",
-          boxShadow: "4px 0 10px rgba(0,0,0,0.1)",
+          boxShadow: "8px 0 28px rgba(47,35,30,0.24)",
           display: "flex",
           flexDirection: "column",
           transform: isSidebarVisible ? "translateX(0)" : "translateX(-100%)",
@@ -46,10 +45,11 @@ function Navbar({
         <h2
           style={{
             margin: "0 0 3rem 0",
-            color: "white",
-            fontSize: "1.8rem",
-            fontWeight: "700",
+            color: "#f8fafc",
+            fontSize: "1.9rem",
+            fontWeight: "800",
             textAlign: "center",
+            letterSpacing: "0.04em",
           }}
         >
           Hema.dev
@@ -59,7 +59,7 @@ function Navbar({
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "0.5rem",
+            gap: "0.55rem",
             flex: 1,
           }}
         >
@@ -69,30 +69,30 @@ function Navbar({
               onClick={() => scrollToSection(item.id)}
               style={{
                 background:
-                  activeSection === item.id ? "rgba(255,255,255,0.15)" : "none",
-                border: "none",
-                color: "white",
+                  activeSection === item.id ? "rgba(244, 191, 117, 0.18)" : "transparent",
+                border: "1px solid transparent",
+                color: "#f8fafc",
                 cursor: "pointer",
                 fontSize: "1rem",
-                padding: "0.9rem 1.2rem",
-                borderRadius: "10px",
+                padding: "0.9rem 1.15rem",
+                borderRadius: "14px",
                 textAlign: "left",
                 transition: "all 0.3s ease",
-                opacity: activeSection === item.id ? 1 : 0.75,
-                fontWeight: activeSection === item.id ? "600" : "400",
+                opacity: activeSection === item.id ? 1 : 0.8,
+                fontWeight: activeSection === item.id ? "700" : "500",
                 borderLeft:
                   activeSection === item.id
-                    ? "4px solid white"
+                    ? "4px solid #f6c177"
                     : "4px solid transparent",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                e.currentTarget.style.background = "rgba(244, 191, 117, 0.12)";
                 e.currentTarget.style.opacity = "1";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background =
-                  activeSection === item.id ? "rgba(255,255,255,0.15)" : "none";
-                e.currentTarget.style.opacity = activeSection === item.id ? "1" : "0.75";
+                  activeSection === item.id ? "rgba(244, 191, 117, 0.18)" : "transparent";
+                e.currentTarget.style.opacity = activeSection === item.id ? "1" : "0.8";
               }}
             >
               {item.label}
@@ -104,9 +104,9 @@ function Navbar({
           style={{
             marginTop: "auto",
             paddingTop: "2rem",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            borderTop: "1px solid rgba(255,255,255,0.12)",
             textAlign: "center",
-            color: "rgba(255,255,255,0.6)",
+            color: "rgba(255,236,214,0.72)",
             fontSize: "0.85rem",
           }}
         >
@@ -121,21 +121,21 @@ function Navbar({
           top: "1rem",
           left: "1rem",
           zIndex: 1001,
-          background: "rgba(79, 70, 229, 1)",
+          background: "linear-gradient(135deg, #2f231e, #964c3a)",
           border: "none",
           color: "white",
           cursor: "pointer",
           padding: "0.7rem 1rem",
-          fontSize: "1.3rem",
-          borderRadius: "8px",
-          boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-          display: isDesktop ? "none" : "block",
+          fontSize: "1rem",
+          fontWeight: "700",
+          borderRadius: "12px",
+          boxShadow: "0 10px 24px rgba(150, 76, 58, 0.28)",
         }}
       >
-        {isMenuOpen ? "X" : "Menu"}
+        {isMenuOpen ? "Close" : "Menu"}
       </button>
 
-      {isMenuOpen && !isDesktop && (
+      {isMenuOpen && (
         <div
           onClick={() => setIsMenuOpen(false)}
           style={{
@@ -144,7 +144,7 @@ function Navbar({
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
+            backgroundColor: "rgba(43,33,28,0.45)",
             zIndex: 999,
           }}
         />
@@ -152,7 +152,7 @@ function Navbar({
 
       <div
         style={{
-          width: isDesktop ? sidebarWidth : "0",
+          width: "0",
           flexShrink: 0,
         }}
       />

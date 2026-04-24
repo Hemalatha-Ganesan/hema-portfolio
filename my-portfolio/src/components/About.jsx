@@ -21,23 +21,32 @@ function About() {
     { icon: <FaMapMarkerAlt />, label: "Location", value: "Tamil Nadu, India" },
     { icon: <FaCalendarAlt />, label: "Year", value: "3rd Year" },
   ];
+  const languages = [
+    { name: "English", level: "Fluent" },
+    { name: "Tamil", level: "Fluent" },
+    { name: "Kannada", level: "Native" },
+  ];
 
   return (
     <section
       id="about"
-      style={{ padding: "6rem 2rem", backgroundColor: "#ffffff", minHeight: "70vh" }}
+      style={{
+        padding: "6rem 2rem",
+        background: "linear-gradient(180deg, #fff7ee 0%, #f7ecdf 100%)",
+        minHeight: "70vh",
+      }}
     >
       <div style={{ maxWidth: "1100px", width: "100%", margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
           <span
             style={{
               display: "inline-block",
-              background: "rgba(79, 70, 229, 0.1)",
-              color: "#4f46e5",
+              background: "rgba(150, 76, 58, 0.12)",
+              color: "#964c3a",
               padding: "0.4rem 1rem",
-              borderRadius: "50px",
+              borderRadius: "999px",
               fontSize: "0.85rem",
-              fontWeight: "600",
+              fontWeight: "700",
               textTransform: "uppercase",
               letterSpacing: "1px",
               marginBottom: "1rem",
@@ -49,17 +58,17 @@ function About() {
             style={{
               fontSize: "2.5rem",
               fontWeight: "800",
-              color: "#1e293b",
+              color: "#2b211c",
               marginBottom: "0.5rem",
             }}
           >
-            Know Who <span style={{ color: "#4f46e5" }}>I Am</span>
+            Know Who <span style={{ color: "#964c3a" }}>I Am</span>
           </h2>
           <div
             style={{
               width: "60px",
               height: "4px",
-              backgroundColor: "#4f46e5",
+              backgroundColor: "#964c3a",
               margin: "0 auto",
               borderRadius: "2px",
             }}
@@ -74,53 +83,117 @@ function About() {
             alignItems: "start",
           }}
         >
-          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "320px",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
-              }}
-            >
-              <img
-                src={myPhoto}
-                alt="Hemalatha"
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.4rem" }}>
+            <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+              <div
                 style={{
+                  position: "relative",
                   width: "100%",
-                  height: "auto",
-                  display: "block",
-                  aspectRatio: "3/4",
-                  objectFit: "cover",
+                  maxWidth: "320px",
+                  borderRadius: "24px",
+                  overflow: "hidden",
+                  boxShadow: "0 25px 50px rgba(47,35,30,0.15)",
+                }}
+              >
+                <img
+                  src={myPhoto}
+                  alt="Hemalatha"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    aspectRatio: "3/4",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-15px",
+                  left: "-15px",
+                  width: "80px",
+                  height: "80px",
+                  border: "4px solid #964c3a",
+                  borderRadius: "16px",
+                  zIndex: -1,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-15px",
+                  right: "-15px",
+                  width: "80px",
+                  height: "80px",
+                  background: "#f0d2b5",
+                  borderRadius: "16px",
+                  zIndex: -1,
                 }}
               />
             </div>
+
             <div
               style={{
-                position: "absolute",
-                top: "-15px",
-                left: "-15px",
-                width: "80px",
-                height: "80px",
-                border: "4px solid #4f46e5",
+                background: "#fffaf5",
                 borderRadius: "16px",
-                zIndex: -1,
+                border: "1px solid #ead7c4",
+                padding: "1.2rem 1.3rem",
+                boxShadow: "0 8px 18px rgba(47,35,30,0.06)",
+                maxWidth: "360px",
+                margin: "0 auto",
               }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: "-15px",
-                right: "-15px",
-                width: "80px",
-                height: "80px",
-                background: "#c7d2fe",
-                borderRadius: "16px",
-                zIndex: -1,
-              }}
-            />
+            >
+              <div
+                style={{
+                  fontSize: "1.02rem",
+                  fontWeight: "700",
+                  color: "#2b211c",
+                  marginBottom: "0.95rem",
+                }}
+              >
+                Languages Known
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                {languages.map((language, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: "1rem",
+                      paddingBottom: idx !== languages.length - 1 ? "0.75rem" : "0",
+                      borderBottom:
+                        idx !== languages.length - 1 ? "1px solid #f1dfcf" : "none",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#5b463d",
+                        fontWeight: "600",
+                        fontSize: "0.98rem",
+                      }}
+                    >
+                      {language.name}
+                    </span>
+                    <span
+                      style={{
+                        color: "#964c3a",
+                        background: "#fff3e6",
+                        border: "1px solid #e8c9ac",
+                        borderRadius: "999px",
+                        padding: "0.32rem 0.72rem",
+                        fontSize: "0.82rem",
+                        fontWeight: "700",
+                      }}
+                    >
+                      {language.level}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div>
@@ -128,20 +201,20 @@ function About() {
               style={{
                 fontSize: "1.6rem",
                 fontWeight: "700",
-                color: "#1e293b",
+                color: "#2b211c",
                 marginBottom: "1rem",
               }}
             >
               I'm Hemalatha G, a passionate{" "}
-              <span style={{ color: "#4f46e5" }}>Full-Stack Developer</span> and{" "}
-              <span style={{ color: "#4f46e5" }}>ML Enthusiast</span>
+              <span style={{ color: "#964c3a" }}>Full-Stack Developer</span> and{" "}
+              <span style={{ color: "#5a3428" }}>ML Enthusiast</span>
             </h3>
 
             <p
               style={{
                 fontSize: "1.05rem",
                 lineHeight: "1.8",
-                color: "#64748b",
+                color: "#6b564b",
                 marginBottom: "1.5rem",
               }}
             >
@@ -155,12 +228,12 @@ function About() {
               style={{
                 fontSize: "1.05rem",
                 lineHeight: "1.8",
-                color: "#64748b",
+                color: "#6b564b",
                 marginBottom: "2rem",
               }}
             >
               I have hands-on experience with modern frameworks like React, robust
-              databases like MySQL and MongoDB, and I'm actively exploring AI/ML
+              databases like MySQL and MongoDB, and I'm actively exploring AI and ML
               domains.
             </p>
 
@@ -179,21 +252,21 @@ function About() {
                     display: "flex",
                     alignItems: "center",
                     gap: "0.75rem",
-                    padding: "0.8rem 1rem",
-                    background: "#f8fafc",
-                    borderRadius: "10px",
-                    border: "1px solid #e2e8f0",
+                    padding: "0.95rem 1rem",
+                    background: "#fffaf5",
+                    borderRadius: "14px",
+                    border: "1px solid #ead7c4",
                   }}
                 >
-                  <span style={{ color: "#4f46e5", fontSize: "1.1rem" }}>{item.icon}</span>
+                  <span style={{ color: "#964c3a", fontSize: "1.1rem" }}>{item.icon}</span>
                   <div>
                     <div
-                      style={{ fontSize: "0.75rem", color: "#94a3b8", fontWeight: "500" }}
+                      style={{ fontSize: "0.75rem", color: "#8a6f62", fontWeight: "600" }}
                     >
                       {item.label}
                     </div>
                     <div
-                      style={{ fontSize: "0.95rem", color: "#334155", fontWeight: "600" }}
+                      style={{ fontSize: "0.95rem", color: "#2b211c", fontWeight: "700" }}
                     >
                       {item.value}
                     </div>
@@ -217,80 +290,56 @@ function About() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "0.5rem",
-                  padding: "0.85rem 1.8rem",
-                  background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
+                  padding: "0.9rem 1.8rem",
+                  background: "linear-gradient(90deg, #964c3a, #2f231e)",
                   color: "white",
-                  borderRadius: "50px",
+                  borderRadius: "999px",
                   textDecoration: "none",
-                  fontWeight: "600",
+                  fontWeight: "700",
                   fontSize: "0.95rem",
-                  boxShadow: "0 8px 20px rgba(79, 70, 229, 0.3)",
+                  boxShadow: "0 10px 24px rgba(47,35,30,0.16)",
                 }}
               >
                 Download CV
               </a>
 
               <div style={{ display: "flex", gap: "0.75rem" }}>
-                <a
-                  href="https://github.com/Hemalatha-Ganesan"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    background: "#f1f5f9",
-                    color: "#475569",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textDecoration: "none",
-                  }}
-                >
-                  <FaGithub size={18} />
-                </a>
-                <a
-                  href="https://leetcode.com/u/hemalatha_08/"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    background: "#f1f5f9",
-                    color: "#475569",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textDecoration: "none",
-                  }}
-                >
-                  <SiLeetcode size={18} />
-                </a>
-                <a
+                <SocialLink href="https://github.com/Hemalatha-Ganesan" icon={<FaGithub size={18} />} />
+                <SocialLink href="https://leetcode.com/u/hemalatha_08/" icon={<SiLeetcode size={18} />} />
+                <SocialLink
                   href="https://www.hackerrank.com/profile/hemalathaganesan"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "50%",
-                    background: "#f1f5f9",
-                    color: "#475569",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    textDecoration: "none",
-                  }}
-                >
-                  <FaHackerrank size={18} />
-                </a>
+                  icon={<FaHackerrank size={18} />}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function SocialLink({ href, icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      style={{
+        width: "42px",
+        height: "42px",
+        borderRadius: "50%",
+        background: "#fff3e6",
+        color: "#964c3a",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textDecoration: "none",
+        border: "1px solid #e8c9ac",
+      }}
+    >
+      {icon}
+    </a>
   );
 }
 

@@ -14,14 +14,14 @@ function Hero({ scrollToSection }) {
         padding: "2rem 4rem",
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(135deg, #f8fafc 0%, #e0e7ff 50%, #f3e8ff 100%)",
-        color: "#1e293b",
+        background:
+          "linear-gradient(135deg, #f7ecdf 0%, #efd8c2 48%, #e5b98b 100%)",
+        color: "#2b211c",
       }}
     >
-      {/* Decorative Blobs */}
-      <div style={blobStyle("#c7d2fe", "-5%", "-10%", "400px")} />
-      <div style={blobStyle("#ddd6fe", "70%", "60%", "350px")} />
-      <div style={blobStyle("#fbcfe8", "40%", "80%", "300px")} />
+      <div style={blobStyle("rgba(198, 93, 54, 0.32)", "-8%", "-10%", "420px")} />
+      <div style={blobStyle("rgba(133, 62, 43, 0.24)", "68%", "60%", "360px")} />
+      <div style={blobStyle("rgba(244, 191, 117, 0.28)", "38%", "82%", "300px")} />
 
       <div
         style={{
@@ -35,37 +35,35 @@ function Hero({ scrollToSection }) {
           zIndex: 2,
         }}
       >
-        {/* LEFT CONTENT */}
         <div style={{ animation: "fadeInUp 1s ease-out" }}>
           <div
             style={{
               display: "inline-block",
-              background: "rgba(99, 102, 241, 0.1)",
-              color: "#4f46e5",
+              background: "rgba(150, 76, 58, 0.12)",
+              color: "#964c3a",
               padding: "0.5rem 1.2rem",
-              borderRadius: "50px",
+              borderRadius: "999px",
               fontSize: "0.95rem",
-              fontWeight: "600",
+              fontWeight: "700",
               marginBottom: "1.5rem",
             }}
           >
-            👋 Welcome to my portfolio
+            Welcome to my portfolio
           </div>
 
           <h1
             style={{
               fontSize: "3.5rem",
               fontWeight: "800",
-              lineHeight: 1.2,
+              lineHeight: 1.15,
               marginBottom: "1rem",
+              color: "#2b211c",
             }}
           >
             Hi, I'm{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #4f46e5, #9333ea)",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
+                color: "#964c3a",
               }}
             >
               Hemalatha G
@@ -74,30 +72,29 @@ function Hero({ scrollToSection }) {
 
           <h2
             style={{
-              fontSize: "1.5rem",
-              color: "#475569",
+              fontSize: "1.45rem",
+              color: "#5b463d",
               fontWeight: "500",
               marginBottom: "1.5rem",
             }}
           >
-            Aspiring Full-Stack Developer | ML & SQL Enthusiast
+            Aspiring Full-Stack Developer | ML and SQL Enthusiast
           </h2>
 
           <p
             style={{
               fontSize: "1.05rem",
-              color: "#64748b",
+              color: "#6b564b",
               lineHeight: 1.8,
               marginBottom: "2rem",
-              maxWidth: "500px",
+              maxWidth: "520px",
             }}
           >
             I craft modern web applications and explore machine learning to build
-            smarter, scalable digital solutions. Passionate about Java, DSA, and
-            creating impactful user experiences.
+            smarter, scalable digital solutions with clean interfaces and thoughtful
+            user experiences.
           </p>
 
-          {/* Social Icons */}
           <div
             style={{
               display: "flex",
@@ -105,49 +102,26 @@ function Hero({ scrollToSection }) {
               marginBottom: "2rem",
             }}
           >
-            <SocialIcon
-              href="https://github.com/Hemalatha-Ganesan"
-              icon={<FaGithub size={20} />}
-            />
-            <SocialIcon
-              href="https://leetcode.com/u/hemalatha_08/"
-              icon={<SiLeetcode size={20} />}
-            />
+            <SocialIcon href="https://github.com/Hemalatha-Ganesan" icon={<FaGithub size={20} />} />
+            <SocialIcon href="https://leetcode.com/u/hemalatha_08/" icon={<SiLeetcode size={20} />} />
             <SocialIcon
               href="https://www.hackerrank.com/profile/hemalathaganesan"
               icon={<FaHackerrank size={20} />}
             />
-            <SocialIcon
-              href="https://linkedin.com"
-              icon={<FaLinkedin size={20} />}
-            />
+            <SocialIcon href="https://linkedin.com" icon={<FaLinkedin size={20} />} />
           </div>
 
-          {/* Buttons */}
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
             <button
               onClick={() => scrollToSection("projects")}
-              style={{
-                padding: "0.9rem 2rem",
-                borderRadius: "50px",
-                background: "linear-gradient(90deg, #4f46e5, #7c3aed)",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-                fontSize: "1rem",
-                fontWeight: "600",
-                boxShadow: "0 8px 25px rgba(79, 70, 229, 0.35)",
-                transition: "all 0.3s ease",
-              }}
+              style={primaryButtonStyle}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-3px)";
-                e.currentTarget.style.boxShadow =
-                  "0 12px 30px rgba(79, 70, 229, 0.45)";
+                e.currentTarget.style.boxShadow = "0 14px 30px rgba(150,76,58,0.28)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow =
-                  "0 8px 25px rgba(79, 70, 229, 0.35)";
+                e.currentTarget.style.boxShadow = "0 10px 24px rgba(47,35,30,0.18)";
               }}
             >
               View My Work
@@ -155,25 +129,15 @@ function Hero({ scrollToSection }) {
 
             <button
               onClick={() => scrollToSection("contact")}
-              style={{
-                padding: "0.9rem 2rem",
-                borderRadius: "50px",
-                background: "transparent",
-                color: "#4f46e5",
-                border: "2px solid #4f46e5",
-                cursor: "pointer",
-                fontSize: "1rem",
-                fontWeight: "600",
-                transition: "all 0.3s ease",
-              }}
+              style={secondaryButtonStyle}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#4f46e5";
+                e.currentTarget.style.background = "#964c3a";
                 e.currentTarget.style.color = "white";
                 e.currentTarget.style.transform = "translateY(-3px)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = "transparent";
-                e.currentTarget.style.color = "#4f46e5";
+                e.currentTarget.style.color = "#964c3a";
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
@@ -181,21 +145,19 @@ function Hero({ scrollToSection }) {
             </button>
           </div>
 
-          {/* Stats */}
           <div
             style={{
               display: "flex",
               gap: "2.5rem",
               marginTop: "3rem",
+              flexWrap: "wrap",
             }}
           >
-            <StatBox number="10+" label="Projects" />
+            <StatBox number="3+" label="Projects" />
             <StatBox number="5+" label="Certifications" />
-            <StatBox number="3+" label="Years Coding" />
           </div>
         </div>
 
-        {/* RIGHT CONTENT - Photo */}
         <div
           style={{
             display: "flex",
@@ -205,14 +167,13 @@ function Hero({ scrollToSection }) {
             animation: "fadeInUp 1.2s ease-out",
           }}
         >
-          {/* Decorative ring */}
           <div
             style={{
               position: "absolute",
               width: "360px",
               height: "360px",
               borderRadius: "50%",
-              border: "3px dashed #c7d2fe",
+              border: "3px dashed rgba(150, 76, 58, 0.26)",
               animation: "spin 20s linear infinite",
             }}
           />
@@ -222,12 +183,11 @@ function Hero({ scrollToSection }) {
               width: "400px",
               height: "400px",
               borderRadius: "50%",
-              border: "2px solid #ddd6fe",
+              border: "2px solid rgba(47, 35, 30, 0.12)",
               animation: "spin 25s linear infinite reverse",
             }}
           />
 
-          {/* Photo container */}
           <div
             style={{
               position: "relative",
@@ -235,8 +195,8 @@ function Hero({ scrollToSection }) {
               height: "320px",
               borderRadius: "50%",
               padding: "8px",
-              background: "linear-gradient(135deg, #4f46e5, #9333ea)",
-              boxShadow: "0 20px 50px rgba(79, 70, 229, 0.3)",
+              background: "linear-gradient(135deg, #964c3a, #2f231e)",
+              boxShadow: "0 24px 50px rgba(47,35,30,0.22)",
             }}
           >
             <img
@@ -252,29 +212,12 @@ function Hero({ scrollToSection }) {
             />
           </div>
 
-          {/* Floating badges */}
-          <FloatingBadge
-            text="React"
-            top="10%"
-            right="5%"
-            color="#61dafb"
-          />
-          <FloatingBadge
-            text="Python"
-            bottom="15%"
-            left="0%"
-            color="#ffd43b"
-          />
-          <FloatingBadge
-            text="Java"
-            top="50%"
-            right="-10%"
-            color="#f89820"
-          />
+          <FloatingBadge text="React" top="10%" right="5%" color="#c65d36" />
+          <FloatingBadge text="Python" bottom="15%" left="0%" color="#8a5a44" />
+          <FloatingBadge text="Java" top="50%" right="-10%" color="#d29a2e" />
         </div>
       </div>
 
-      {/* Down Arrow */}
       <div
         style={{
           position: "absolute",
@@ -282,14 +225,14 @@ function Hero({ scrollToSection }) {
           left: "50%",
           transform: "translateX(-50%)",
           fontSize: "2rem",
-          color: "#4f46e5",
+          color: "#964c3a",
           cursor: "pointer",
           animation: "bounce 2s infinite",
           zIndex: 3,
         }}
         onClick={() => scrollToSection("about")}
       >
-        ⌄
+        v
       </div>
 
       <style>{`
@@ -314,7 +257,6 @@ function Hero({ scrollToSection }) {
   );
 }
 
-/* Social Icon Component */
 function SocialIcon({ href, icon }) {
   return (
     <a
@@ -322,26 +264,27 @@ function SocialIcon({ href, icon }) {
       target="_blank"
       rel="noreferrer"
       style={{
-        width: "42px",
-        height: "42px",
+        width: "44px",
+        height: "44px",
         borderRadius: "50%",
-        background: "white",
-        color: "#4f46e5",
+        background: "rgba(255,255,255,0.82)",
+        color: "#964c3a",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.08)",
+        boxShadow: "0 6px 14px rgba(150,76,58,0.12)",
         transition: "all 0.3s ease",
         textDecoration: "none",
+        border: "1px solid rgba(150,76,58,0.12)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = "#4f46e5";
+        e.currentTarget.style.background = "#964c3a";
         e.currentTarget.style.color = "white";
         e.currentTarget.style.transform = "translateY(-4px)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = "white";
-        e.currentTarget.style.color = "#4f46e5";
+        e.currentTarget.style.background = "rgba(255,255,255,0.82)";
+        e.currentTarget.style.color = "#964c3a";
         e.currentTarget.style.transform = "translateY(0)";
       }}
     >
@@ -350,7 +293,6 @@ function SocialIcon({ href, icon }) {
   );
 }
 
-/* Stat Box Component */
 function StatBox({ number, label }) {
   return (
     <div>
@@ -358,7 +300,7 @@ function StatBox({ number, label }) {
         style={{
           fontSize: "1.8rem",
           fontWeight: "800",
-          color: "#4f46e5",
+          color: "#964c3a",
         }}
       >
         {number}
@@ -366,7 +308,7 @@ function StatBox({ number, label }) {
       <div
         style={{
           fontSize: "0.9rem",
-          color: "#64748b",
+          color: "#6b564b",
           fontWeight: "500",
         }}
       >
@@ -376,7 +318,6 @@ function StatBox({ number, label }) {
   );
 }
 
-/* Floating Badge */
 function FloatingBadge({ text, top, bottom, left, right, color }) {
   return (
     <div
@@ -386,13 +327,13 @@ function FloatingBadge({ text, top, bottom, left, right, color }) {
         bottom,
         left,
         right,
-        background: "white",
-        color: "#334155",
+        background: "rgba(255,255,255,0.92)",
+        color: "#2b211c",
         padding: "0.5rem 1rem",
-        borderRadius: "50px",
+        borderRadius: "999px",
         fontSize: "0.85rem",
-        fontWeight: "600",
-        boxShadow: "0 4px 15px rgba(0,0,0,0.1)",
+        fontWeight: "700",
+        boxShadow: "0 8px 18px rgba(47,35,30,0.12)",
         animation: "float 3s ease-in-out infinite",
         display: "flex",
         alignItems: "center",
@@ -414,7 +355,6 @@ function FloatingBadge({ text, top, bottom, left, right, color }) {
   );
 }
 
-/* Blob Style */
 function blobStyle(color, left, top, size) {
   return {
     position: "absolute",
@@ -423,12 +363,36 @@ function blobStyle(color, left, top, size) {
     borderRadius: "50%",
     background: color,
     filter: "blur(80px)",
-    opacity: 0.4,
+    opacity: 0.9,
     left,
     top,
     zIndex: 0,
   };
 }
 
-export default Hero;
+const primaryButtonStyle = {
+  padding: "0.9rem 2rem",
+  borderRadius: "999px",
+  background: "linear-gradient(90deg, #964c3a, #2f231e)",
+  color: "white",
+  border: "none",
+  cursor: "pointer",
+  fontSize: "1rem",
+  fontWeight: "700",
+  boxShadow: "0 10px 24px rgba(47,35,30,0.18)",
+  transition: "all 0.3s ease",
+};
 
+const secondaryButtonStyle = {
+  padding: "0.9rem 2rem",
+  borderRadius: "999px",
+  background: "transparent",
+  color: "#964c3a",
+  border: "2px solid #964c3a",
+  cursor: "pointer",
+  fontSize: "1rem",
+  fontWeight: "700",
+  transition: "all 0.3s ease",
+};
+
+export default Hero;

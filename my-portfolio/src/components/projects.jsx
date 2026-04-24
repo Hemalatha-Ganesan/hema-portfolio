@@ -1,167 +1,279 @@
-import React from 'react';
+import React from "react";
 
 function Projects() {
   const projects = [
     {
-      title: 'Deep Learning-Based COVID-19 & Pneumonia Detection',
-      description: 'Developing an AI-powered diagnostic framework to classify COVID-19 and Pneumonia from Chest X-ray (CXR) images using Convolutional Neural Networks (CNNs) and Transfer Learning.',
-      tech: ['Python', 'TensorFlow/Keras', 'DenseNet', 'EfficientNet', 'Xception', 'Grad-CAM'],
-      githubUrl: 'https://github.com/Hemalatha-Ganesan/Medical_diagnosis_using_ML',
-      color: '#f87171'
+      title: "Medical Diagnosis Using Deep Learning",
+      category: "AI / Healthcare",
+      summary:
+        "Deep-learning solution for detecting COVID-19 and pneumonia from chest X-ray images.",
+      highlight: "Added Grad-CAM for more explainable predictions.",
+      tech: ["Python", "TensorFlow", "DenseNet", "EfficientNet", "Xception", "Grad-CAM"],
+      githubUrl: "https://github.com/Hemalatha-Ganesan/Medical_diagnosis_using_ML",
+      color: "#964c3a",
     },
     {
-      title: 'Personal Portfolio Website - Full Stack',
-      description: 'Developing a modern, responsive personal portfolio to showcase my projects and skills. Building reusable React components and styling with Tailwind CSS for a clean UI/UX.',
-      tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'Git', 'GitHub'],
-      liveUrl: 'https://hema-portfolio-lake.vercel.app/',
-      color: '#3b82f6'
+      title: "Personal Portfolio Website",
+      category: "Frontend / Branding",
+      summary:
+        "Responsive portfolio website to showcase projects, skills, certifications, and profile details.",
+      highlight: "Built with reusable React components and mobile-friendly layout.",
+      tech: ["React", "JavaScript", "CSS", "Responsive UI", "GitHub"],
+      liveUrl: "https://hema-portfolio-lake.vercel.app/",
+      color: "#5a3428",
     },
     {
-      title: 'AI-Driven Course Recommendation System – Full-stack / AI Integration',
-      description: 'Developed a web application that recommends personalized courses based on user interests, skills, and learning goals. Integrated AI to analyze user preferences and generate intelligent course suggestions, along with insights to improve learning paths and skill development.',
-      tech: ['React.js', 'Tailwind CSS', 'JavaScript', 'OpenAI API', 'Git', 'GitHub'],
-      liveUrl: 'https://ai-course-recommendation-system.vercel.app/login',
-      color: '#10b981'
-    }
+      title: "AI-Driven Course Recommendation System",
+      category: "Full Stack / AI",
+      summary:
+        "Course recommendation platform that suggests learning paths based on user interests and goals.",
+      highlight: "Integrated AI recommendation logic into the user workflow.",
+      tech: ["React", "JavaScript", "OpenAI API", "Tailwind CSS", "Git", "Vercel"],
+      liveUrl: "https://ai-course-recommendation-system.vercel.app/login",
+      color: "#d29a2e",
+    },
   ];
 
-  const getLinkProps = (project) => {
-    const url = project.liveUrl || project.githubUrl;
-    const text = project.liveUrl ? 'Live Demo →' : 'View on GitHub →';
-    return { href: url, text };
-  };
-
   return (
-    <section id="projects" style={{
-      padding: '5rem 2rem',
-      backgroundColor: '#f9fafb',
-      minHeight: '80vh'
-    }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h2 style={{
-          fontSize: '2.5rem',
-          marginBottom: '1rem',
-          textAlign: 'center',
-          color: '#1f2937',
-          fontWeight: '700'
-        }}>
-          Featured Projects
-        </h2>
-        <div style={{
-          width: '60px',
-          height: '4px',
-          backgroundColor: '#667eea',
-          margin: '0 auto 3rem',
-          borderRadius: '2px'
-        }} />
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem'
-        }}>
-          {projects.map((project, idx) => {
-            const linkProps = getLinkProps(project);
-            return (
-              <div
-                key={idx}
-                style={{
-                  backgroundColor: 'white',
-                  borderRadius: '15px',
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-10px)';
-                  e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-                }}
-              >
-                <div style={{
-                  height: '150px',
-                  background: `linear-gradient(135deg, ${project.color}, ${project.color}dd)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '3rem'
-                }}>
-                  💼
-                </div>
-                <div style={{ padding: '1.5rem' }}>
-                  <h3 style={{
-                    fontSize: '1.5rem',
-                    marginBottom: '1rem',
-                    color: '#1f2937',
-                    fontWeight: '600'
-                  }}>
-                    {project.title}
-                  </h3>
-                  <p style={{
-                    color: '#6b7280',
-                    marginBottom: '1rem',
-                    lineHeight: '1.6'
-                  }}>
-                    {project.description}
-                  </p>
-                  <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem',
-                    marginBottom: '1rem'
-                  }}>
-                    {project.tech.map((t, i) => (
-                      <span
-                        key={i}
-                        style={{
-                          backgroundColor: '#f3f4f6',
-                          color: '#4b5563',
-                          padding: '0.25rem 0.75rem',
-                          borderRadius: '12px',
-                          fontSize: '0.85rem'
-                        }}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={linkProps.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      backgroundColor: project.color,
-                      color: 'white',
-                      border: 'none',
-                      padding: '0.75rem 1.5rem',
-                      borderRadius: '8px',
-                      cursor: 'pointer',
-                      fontSize: '1rem',
-                      fontWeight: '500',
-                      transition: 'opacity 0.3s',
-                      textDecoration: 'none'
-                    }}
-                    onMouseEnter={(e) => e.target.style.opacity = '0.9'}
-                    onMouseLeave={(e) => e.target.style.opacity = '1'}
-                  >
-                    {linkProps.text}
-                  </a>
-                </div>
-              </div>
-            );
-          })}
+    <section
+      id="projects"
+      style={{
+        padding: "5rem 2rem",
+        background: "linear-gradient(180deg, #f8efe6 0%, #fff7ee 100%)",
+        minHeight: "80vh",
+      }}
+    >
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <span
+            style={{
+              display: "inline-block",
+              background: "rgba(150, 76, 58, 0.12)",
+              color: "#964c3a",
+              padding: "0.45rem 1rem",
+              borderRadius: "999px",
+              fontSize: "0.82rem",
+              fontWeight: "700",
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              marginBottom: "1rem",
+            }}
+          >
+            Featured Work
+          </span>
+          <h2
+            style={{
+              fontSize: "2.5rem",
+              marginBottom: "0.75rem",
+              color: "#2b211c",
+              fontWeight: "800",
+            }}
+          >
+            Projects With <span style={{ color: "#964c3a" }}>Impact</span>
+          </h2>
+          <p
+            style={{
+              maxWidth: "560px",
+              margin: "0 auto 1rem",
+              color: "#6b564b",
+              lineHeight: "1.65",
+              fontSize: "0.92rem",
+            }}
+          >
+            Selected work across frontend development, full-stack applications, and AI.
+          </p>
+          <div
+            style={{
+              width: "64px",
+              height: "4px",
+              backgroundColor: "#964c3a",
+              margin: "0 auto",
+              borderRadius: "2px",
+            }}
+          />
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gap: "1.5rem",
+          }}
+        >
+          {projects.map((project, idx) => (
+            <ProjectCard key={idx} project={project} />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-export default Projects;
+function ProjectCard({ project }) {
+  return (
+    <article
+      style={{
+        backgroundColor: "white",
+        borderRadius: "22px",
+        overflow: "hidden",
+        boxShadow: "0 10px 24px rgba(47,35,30,0.08)",
+        transition: "transform 0.3s, box-shadow 0.3s",
+        border: "1px solid #ead7c4",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100%",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = "translateY(-8px)";
+        e.currentTarget.style.boxShadow = "0 20px 36px rgba(47,35,30,0.13)";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.boxShadow = "0 10px 24px rgba(47,35,30,0.08)";
+      }}
+    >
+      <div
+        style={{
+          padding: "1.25rem",
+          background: `linear-gradient(135deg, ${project.color}, ${project.color}CC)`,
+          color: "white",
+        }}
+      >
+        <div
+          style={{
+            display: "inline-flex",
+            background: "rgba(255,255,255,0.18)",
+            padding: "0.35rem 0.7rem",
+            borderRadius: "999px",
+            fontSize: "0.72rem",
+            fontWeight: "700",
+            letterSpacing: "0.05em",
+            textTransform: "uppercase",
+            marginBottom: "0.9rem",
+          }}
+        >
+          {project.category}
+        </div>
+        <h3
+          style={{
+            fontSize: "1.3rem",
+            fontWeight: "800",
+            lineHeight: "1.3",
+          }}
+        >
+          {project.title}
+        </h3>
+      </div>
 
+      <div
+        style={{
+          padding: "1.25rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.95rem",
+          flex: 1,
+        }}
+      >
+        <p
+          style={{
+            color: "#6b564b",
+            lineHeight: "1.6",
+            fontSize: "0.9rem",
+          }}
+        >
+          {project.summary}
+        </p>
+
+        <div
+          style={{
+            background: "#fffaf5",
+            border: "1px solid #f1dfcf",
+            borderRadius: "14px",
+            padding: "0.75rem 0.85rem",
+            color: "#5b463d",
+            fontSize: "0.85rem",
+            lineHeight: "1.5",
+            fontWeight: "500",
+          }}
+        >
+          {project.highlight}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "0.45rem",
+          }}
+        >
+          {project.tech.map((tech, i) => (
+            <span
+              key={i}
+              style={{
+                backgroundColor: "#fff3e6",
+                color: "#964c3a",
+                padding: "0.28rem 0.65rem",
+                borderRadius: "999px",
+                fontSize: "0.78rem",
+                fontWeight: "600",
+                border: "1px solid #e8c9ac",
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "0.65rem",
+            flexWrap: "wrap",
+            marginTop: "auto",
+          }}
+        >
+          {project.liveUrl && (
+            <ActionLink href={project.liveUrl} label="Live Demo" background={project.color} />
+          )}
+          {project.githubUrl && (
+            <ActionLink href={project.githubUrl} label="GitHub" background="#2b211c" />
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ActionLink({ href, label, background }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: background,
+        color: "white",
+        padding: "0.72rem 1.1rem",
+        borderRadius: "999px",
+        cursor: "pointer",
+        fontSize: "0.86rem",
+        fontWeight: "700",
+        transition: "opacity 0.3s",
+        textDecoration: "none",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.opacity = "0.9";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.opacity = "1";
+      }}
+    >
+      {label}
+    </a>
+  );
+}
+
+export default Projects;
